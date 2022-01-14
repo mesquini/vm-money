@@ -4,11 +4,15 @@
   <img src=".github/vm-money.png" alt="App demo"/>
 </p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/69355e10-f16c-44b3-9b6f-ea27432e6e31/deploy-status)](https://app.netlify.com/sites/vm-money-mesquini/deploys)
+<div align="center">
+  <img src="https://api.netlify.com/api/v1/badges/69355e10-f16c-44b3-9b6f-ea27432e6e31/deploy-status" alt="statu netlify">
+</div>
 
-<h4 align="center">
-  Gerenciador de contas
-</h4>
+<div align="center">
+  <a href="https://vm-money-mesquini-mesquini.netlify.com/" title="Pokedex" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/mesquini/image/upload/v1580130380/demo_on_netlify_bbuvjz_gfadtn.png">
+  </a>
+</div>
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
