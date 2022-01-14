@@ -22,6 +22,17 @@ export const Container = styled.div`
       color: var(--text-body);
       border-radius: 0.25rem;
 
+      button {
+        border: 0;
+        background: transparent;
+        width: 1.5rem;
+        transition: filter 0.2s;
+
+        &:hover {
+          filter: brightness(0.9)
+        }        
+      }
+
       &:first-child {
         color: var(--title)
       }

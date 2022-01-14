@@ -1,23 +1,11 @@
-
-
-import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
+import { useTransactions } from '../../hooks/useTransactions';
 
 import { Container } from './styles'
 
+import deleteImg from '../../assets/delete.svg'
+
 export function TransactionsTable() {
-  const [transactions, setTransaction] = useState();
-
-  useEffect(() => {
-    async function getTransactions() {
-      const response = await api.get('/transactions')
-      
-      setTransaction(response.data);
-    }
-
-    getTransactions()
-    
-  }, [])
+  const {transactions, deleteTransaction} = useTransactions();
 
   return(
     <Container>
@@ -28,38 +16,37 @@ export function TransactionsTable() {
             <th>Valor</th>
             <th>Categoria</th>
             <th>Data</th>
+            <th>Deletar</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>
-              PC gamer
-            </td>
-            <td className="deposit">
-              + R$12000
-            </td>
-            <td>
-              Desenvolvimento
-            </td>
-            <td>
-              20/01/2020
-            </td>
-          </tr>
-          <tr>
-            <td>
-              PC gamer
-            </td>
-            <td className="withdraw">
-              - R$2000
-            </td>
-            <td>
-              Desenvolvimento
-            </td>
-            <td>
-              20/01/2020
-            </td>
-          </tr>
+          {transactions.map(transaction => (
+            <tr key={transaction.id}>
+              <td>
+                {transaction.title}
+              </td>
+              <td className={transaction.type}>
+                {transaction.type === 'deposit' ? '+ ' : '- '} 
+                {new Intl.NumberFormat('pt-BR',{
+                  style: 'currency',
+                  currency: 'BRL'
+                }).format(transaction.amount)}
+              </td>
+              <td>
+                {transaction.category}
+              </td>
+              <td>
+                {new Intl.DateTimeFormat('pt-BR')
+                .format(new Date(transaction.createdAt))}
+              </td>
+              <td>
+                <button type="button" onClick={() => deleteTransaction(transaction.id)}>
+                  <img src={deleteImg} alt="delete" />
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </Container>
