@@ -4,6 +4,8 @@
   <img src=".github/vm-money.png" alt="App demo"/>
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69355e10-f16c-44b3-9b6f-ea27432e6e31/deploy-status)](https://app.netlify.com/sites/vm-money-mesquini/deploys)
+
 <h4 align="center">
   Gerenciador de contas
 </h4>
